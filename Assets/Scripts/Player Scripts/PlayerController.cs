@@ -34,6 +34,9 @@ public class PlayerController : MonoBehaviour
     {
         GetKeyboardInput();
         AnimatePlayer();
+        Attack();
+        IsOnGround();
+        Jump();
     }
 
     private void FixedUpdate()
@@ -48,7 +51,7 @@ public class PlayerController : MonoBehaviour
             moveHorizontal = -1;
         }
 
-        if (Input.GetKeyUp(KeyCode.A))
+        if (Input.GetKeyUp(KeyCode.A) && moveHorizontal != 1)
         {
             moveHorizontal = 0;
         }
@@ -58,7 +61,7 @@ public class PlayerController : MonoBehaviour
             moveHorizontal = 1;
         }
 
-        if (Input.GetKeyUp(KeyCode.D))
+        if (Input.GetKeyUp(KeyCode.D) && moveHorizontal != -1)
         {
             moveHorizontal = 0;
         }
@@ -106,6 +109,45 @@ public class PlayerController : MonoBehaviour
                     isMoving = true;
                     animator.SetTrigger(Tags.RUN_ANIMATION);
                 }
+            }
+        } else
+        {
+            if (isMoving)
+            {
+                if (animator.GetCurrentAnimatorStateInfo(0).IsName(Tags.RUN_ANIMATION))
+                {
+                    isMoving = false;
+                    animator.SetTrigger(Tags.STOP_TRIGGER);
+                }
+            }
+        }
+    }
+
+    void Attack()
+    {
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            if(!animator.GetCurrentAnimatorStateInfo(0).IsName(Tags.ATTACK_ANIMATION) || !animator.GetCurrentAnimatorStateInfo(0).IsName(Tags.RUN_ATTACK_ANIMATION))
+            {
+                animator.SetTrigger(Tags.ATTACK_TRIGGER);
+            }
+        }
+    }
+
+    void IsOnGround()
+    {
+        canJump = Physics.Raycast(groundCheck.position, Vector3.down, 0.2f, groundLayer);
+    }
+
+    void Jump()
+    {
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            if (canJump)
+            {
+                canJump = false;
+                rb.MovePosition(transform.position + transform.up * (jumpForce * playerSpeed));
+                animator.SetTrigger(Tags.JUMP_TRIGGER);
             }
         }
     }
