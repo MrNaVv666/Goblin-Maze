@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 664857782}
   - component: {fileID: 664857781}
   - component: {fileID: 664857780}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -470,8 +470,37 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 531941432014544821, guid: e5759f297bab43d45ba00a78867e88a4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1606685252369200607}
   m_SourcePrefab: {fileID: 100100000, guid: e5759f297bab43d45ba00a78867e88a4, type: 3}
+--- !u!1 &1606685252369200605 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 531941432014544821, guid: e5759f297bab43d45ba00a78867e88a4, type: 3}
+  m_PrefabInstance: {fileID: 1606685252369200604}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1606685252369200606 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3899622721904015699, guid: e5759f297bab43d45ba00a78867e88a4, type: 3}
+  m_PrefabInstance: {fileID: 1606685252369200604}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1606685252369200607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1606685252369200605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad87feb64b7629541a3a6a4a3b4afa5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundCheck: {fileID: 1606685252369200606}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
