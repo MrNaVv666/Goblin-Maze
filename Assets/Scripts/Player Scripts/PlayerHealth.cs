@@ -14,6 +14,11 @@ public class PlayerHealth : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
+    private void Start()
+    {
+        GameplayController.instance.DisplayHealth(health);
+    }
+
     public void ApplyDamage(int damage)
     {
         health -= damage;
@@ -22,12 +27,14 @@ public class PlayerHealth : MonoBehaviour
             health = 0;
         }
 
-        //DISPLAY VAL
+        GameplayController.instance.DisplayHealth(health);
 
         if (health == 0)
         {
             playerController.enabled = false;
             animator.Play(Tags.DEAD_ANIMATION);
+            GameplayController.instance.isPlayerAlive = false;
+            //GO
         }
     }
 }
