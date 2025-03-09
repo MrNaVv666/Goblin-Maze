@@ -11,6 +11,8 @@ public class EnemyScript : MonoBehaviour
     private float enemySpeed = 10f;
     private float enemyWatchThreshold = 70f;
     private float enemyAttackThreshold = 6f;
+
+    public GameObject damagePoint;
     void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -55,5 +57,15 @@ public class EnemyScript : MonoBehaviour
                 animator.SetTrigger(Tags.STOP_TRIGGER);
             }
         }
+    }
+
+    void ActivateDamagePoint()
+    {
+        damagePoint.SetActive(true);
+    }
+
+    void DeactivateDamagePoint()
+    {
+        damagePoint.SetActive(false);
     }
 }

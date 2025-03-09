@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
 
     public Transform groundCheck;
     public LayerMask groundLayer;
+    public GameObject damagePoint;
 
     void Awake()
     {
@@ -150,5 +151,15 @@ public class PlayerController : MonoBehaviour
                 animator.SetTrigger(Tags.JUMP_TRIGGER);
             }
         }
+    }
+
+    void ActivateDamagePoint()
+    {
+        damagePoint.SetActive(true);
+    }
+
+    void DeactivateDamagePoint()
+    {
+        damagePoint.SetActive(false);
     }
 }
