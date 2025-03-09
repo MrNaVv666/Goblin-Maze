@@ -15,7 +15,7 @@ public class EnemyDamage : MonoBehaviour
         {
             if(hit[0].gameObject.tag == Tags.PLAYER_TAG)
             {
-
+                hit[0].gameObject.GetComponent<PlayerHealth>().ApplyDamage(damage);
             }
         }
     }

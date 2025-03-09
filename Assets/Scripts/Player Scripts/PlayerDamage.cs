@@ -9,12 +9,12 @@ public class PlayerDamage : MonoBehaviour
 
     void Update()
     {
-        Collider[] hit = Physics.OverlapSphere(transform.position, 0.1f, enemyLayer);
+        Collider[] hit = Physics.OverlapSphere(transform.position, 0.5f, enemyLayer);
         if (hit.Length > 0)
         {
             if (hit[0].gameObject.tag == Tags.ENEMY_TAG)
             {
-                print("ALE GOBELUN");
+                hit[0].gameObject.GetComponent<EnemyHealth>().ApplyDamage(damage);
             }
         }
     }
