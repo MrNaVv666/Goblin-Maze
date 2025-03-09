@@ -37,4 +37,14 @@ public class PlayerHealth : MonoBehaviour
             //GO
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == Tags.COIN_TAG)
+        {
+            other.gameObject.SetActive(false);
+            GameplayController.instance.CoinGet();
+            SoundManager.instance.PlayCoinSound();
+        }
+    }
 }
