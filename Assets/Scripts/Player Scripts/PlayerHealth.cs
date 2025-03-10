@@ -34,7 +34,7 @@ public class PlayerHealth : MonoBehaviour
             playerController.enabled = false;
             animator.Play(Tags.DEAD_ANIMATION);
             GameplayController.instance.isPlayerAlive = false;
-            //GO
+            GameplayController.instance.GameOver();
         }
     }
 

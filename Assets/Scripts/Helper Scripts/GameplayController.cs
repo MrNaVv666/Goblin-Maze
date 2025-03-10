@@ -7,6 +7,8 @@ public class GameplayController : MonoBehaviour
 {
     [HideInInspector] public bool isPlayerAlive;
     public static GameplayController instance;
+    public GameObject endPanel;
+    
     public float timerTime = 0;
 
     private int coinScore;
@@ -29,6 +31,7 @@ public class GameplayController : MonoBehaviour
     void Start()
     {
         isPlayerAlive = true;
+        endPanel.SetActive(false);
     }
 
     void Update()
@@ -62,5 +65,11 @@ public class GameplayController : MonoBehaviour
     {
         timerTime -= Time.deltaTime;
         timerText.text = "Time: " + timerTime.ToString("F0");
+    }
+
+    public void GameOver()
+    {
+        Time.timeScale = 0;
+        endPanel.SetActive(true);
     }
 }

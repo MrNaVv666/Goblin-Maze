@@ -610,6 +610,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayerAlive: 0
+  endPanel: {fileID: 1046396880}
   timerTime: 100
 --- !u!4 &537603172
 Transform:
@@ -1935,6 +1936,10 @@ PrefabInstance:
     - target: {fileID: 531941432014766677, guid: e5759f297bab43d45ba00a78867e88a4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2715375534033713397, guid: e5759f297bab43d45ba00a78867e88a4, type: 3}
+      propertyPath: health
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
