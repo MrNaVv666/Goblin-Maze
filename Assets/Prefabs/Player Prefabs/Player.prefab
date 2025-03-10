@@ -975,7 +975,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7842c7795b600364595eb85580e9859c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 2
 --- !u!4 &531941432014766677 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400122, guid: 0f726104d6246a14285a059715a72e91, type: 3}
