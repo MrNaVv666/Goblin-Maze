@@ -17,4 +17,20 @@ public class AnimationsEvents : MonoBehaviour
         player.SetActive(true);
         playButton.SetActive(true);
     }
+
+    private void OnTriggerEnter(Collider collision)
+    {
+        if(collision.tag == Tags.PLAYER_TAG)
+        {
+
+        }
+    }
+
+    private void OnTriggerExit(Collider collision)
+    {
+        if (collision.tag == Tags.PLAYER_TAG)
+        {
+
+        }
+    }
 }
